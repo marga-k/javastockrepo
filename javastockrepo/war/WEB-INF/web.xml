@@ -4,13 +4,26 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>Javastockrepo</servlet-name>
+
+	<welcome-file-list>	
+			<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+ 	<servlet>
+		<servlet-name>JavastockrepoServelt</servlet-name>
 		<servlet-class>com.krontman.JavastockrepoServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Javastockrepo</servlet-name>
-		<url-pattern>/javastockrepo</url-pattern>
+		<servlet-name>JavastockrepoServelt</servlet-name>
+		<url-pattern>/javastockrepoServelt</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Ex03</servlet-name>
+		<servlet-class>com.krontman.Ex03</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ex03</servlet-name>
+		<url-pattern>/Ex03</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
