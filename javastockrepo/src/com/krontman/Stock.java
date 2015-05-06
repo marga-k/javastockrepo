@@ -12,7 +12,14 @@ public class Stock extends HttpServlet {
 	private String symbol;
 	private float ask, bid;
 	private java.util.Date date;
-	
+	private int recommendation;
+	private int stockQuantity;
+	private int recomendation;
+	private final static int BUY= 0;
+	private final static int SELL= 1;
+	private final static int REMOVE= 2;
+	private final static int HOLD= 3;
+
 	
 	public String getSymbol() {
 		return symbol;

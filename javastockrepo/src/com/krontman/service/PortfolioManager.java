@@ -1,4 +1,4 @@
-package com.krontman;
+package com.krontman.service;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.krontman.Stock;
+import com.krontman.model.Portfolio;
 
-public class StockDeatailsServlet extends HttpServlet
-{
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+public class PortfolioManager extends HttpServlet{
+
+	public Portfolio getPortfolio()
+	{
+		Portfolio portfolio= new Portfolio("My Portfolio");
 		
 		Calendar cal1 = Calendar.getInstance();
 		Calendar cal2 = Calendar.getInstance();
@@ -40,9 +42,16 @@ public class StockDeatailsServlet extends HttpServlet
 		stock3.setBid((float)31.5);
 		stock3.setDate(cal3.getTime());
 		
-		resp.getWriter().println(stock1.getHtmlDescription());
-		resp.getWriter().println(stock2.getHtmlDescription());
-		resp.getWriter().println(stock3.getHtmlDescription());
+		portfolio.addStock(stock1);
+		portfolio.addStock(stock2);
+		portfolio.addStock(stock3);
+		
+		return portfolio;
 	}
-
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+	
+	}
 }
