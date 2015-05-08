@@ -1,5 +1,7 @@
 package com.krontman.service;
 
+
+
 import java.io.IOException;
 import java.util.Calendar;
 
@@ -8,8 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.krontman.Stock;
 import com.krontman.model.Portfolio;
+import com.krontman.model.Stock;
+
+/**
+ * portfolio manager definition
+ * @author marga
+ *
+ */
 
 public class PortfolioManager extends HttpServlet{
 

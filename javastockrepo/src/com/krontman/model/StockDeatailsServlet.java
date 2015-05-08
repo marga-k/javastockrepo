@@ -1,4 +1,6 @@
-package com.krontman;
+
+
+package com.krontman.model;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -8,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * stock deatails servlet definition
+ * @author marga
+ *
+ */
 
 public class StockDeatailsServlet extends HttpServlet
 {
