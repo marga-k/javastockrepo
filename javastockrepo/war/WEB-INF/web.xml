@@ -9,22 +9,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 			<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
- 	<servlet>
-		<servlet-name>JavastockrepoServelt</servlet-name>
-		<servlet-class>com.krontman.JavastockrepoServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>JavastockrepoServelt</servlet-name>
-		<url-pattern>/javastockrepoServelt</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Ex03</servlet-name>
-		<servlet-class>com.krontman.Ex03</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Ex03</servlet-name>
-		<url-pattern>/Ex03</url-pattern>
-	</servlet-mapping>
 	<servlet>
 		<servlet-name>Stock</servlet-name>
 		<servlet-class>com.krontman.model.Stock</servlet-class>
