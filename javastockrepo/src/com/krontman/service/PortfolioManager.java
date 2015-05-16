@@ -23,36 +23,39 @@ public class PortfolioManager extends HttpServlet{
 
 	public Portfolio getPortfolio()
 	{
-		Portfolio portfolio= new Portfolio("My Portfolio");
-		
+		Portfolio portfolio= new Portfolio("Exercise 7 portfolio");
+		portfolio.updateBalance(10000);
 		Calendar cal1 = Calendar.getInstance();
 		Calendar cal2 = Calendar.getInstance();
 		Calendar cal3 = Calendar.getInstance();
-		cal1.set(2014, 11, 15);
-		cal2.set(2014, 11, 15);
-		cal3.set(2014, 11, 15);
+		cal1.set(2014, 12, 15);
+		cal2.set(2014, 12, 15);
+		cal3.set(2014, 12, 15);
 		Stock stock1 = new Stock();
 		Stock stock2 = new Stock();
 		Stock stock3 = new Stock();
 		
 		stock1.setSymbol("PIH");
-		stock1.setAsk((float)13.1);
-		stock1.setBid((float)12.4);
+		stock1.setAsk((float)10.0);
+		stock1.setBid((float)8.5);
 		stock1.setDate(cal1.getTime());
 		
 		stock2.setSymbol("AAL");
-		stock2.setAsk((float)5.78);
-		stock2.setBid((float)5.5);
+		stock2.setAsk((float)30.0);
+		stock2.setBid((float)25.5);
 		stock2.setDate(cal2.getTime());
 		
 		stock3.setSymbol("CAAS");
-		stock3.setAsk((float)32.2);
-		stock3.setBid((float)31.5);
+		stock3.setAsk((float)20.0);
+		stock3.setBid((float)15.5);
 		stock3.setDate(cal3.getTime());
-		
-		portfolio.addStock(stock1);
-		portfolio.addStock(stock2);
-		portfolio.addStock(stock3);
+
+		portfolio.buyStock(stock1, 20);
+		portfolio.buyStock(stock2, 30);
+		portfolio.buyStock(stock3, 40);
+
+		portfolio.sellStock("AAL", -1);
+		portfolio.removeStock("CAAS");
 		
 		return portfolio;
 	}

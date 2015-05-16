@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.krontman.model.Portfolio.ALGO_RECOMMENDATION;
+
 /** 
  * stock definition
  * @author marga
@@ -19,12 +21,9 @@ public class Stock extends HttpServlet {
 	private String symbol;
 	private float ask, bid;
 	private java.util.Date date;
-	private int recommendation;
+	private ALGO_RECOMMENDATION recommendation;
 	private int stockQuantity;
-	private final static int BUY= 0;
-	private final static int SELL= 1;
-	private final static int REMOVE= 2;
-	private final static int HOLD= 3;
+	
 
 	/**
 	 * empty c'tor
@@ -44,7 +43,7 @@ public class Stock extends HttpServlet {
 	 * @param i_stockQuantity
 	 */
 	
-	public Stock(String i_symbol, float i_ask, float i_bid, java.util.Date i_date, int i_record, int i_stockQuantity)
+	public Stock(String i_symbol, float i_ask, float i_bid, java.util.Date i_date, ALGO_RECOMMENDATION i_record, int i_stockQuantity)
 	{
 		this.symbol = i_symbol;
 		this.ask = i_ask;
@@ -72,12 +71,12 @@ public class Stock extends HttpServlet {
 	}
 
 
-	public int getRecommendation() {
+	public ALGO_RECOMMENDATION getRecommendation() {
 		return recommendation;
 	}
 
 
-	public void setRecommendation(int recommendation) {
+	public void setRecommendation(ALGO_RECOMMENDATION recommendation) {
 		this.recommendation = recommendation;
 	}
 
@@ -145,7 +144,7 @@ public class Stock extends HttpServlet {
 	public String getHtmlDescription()
 	{
 		String str= new String();
-		str= ("<b>Stock symbol: </b>" +this.getSymbol() +"<b>, ask: </b>" +this.getAsk() +"<b>, bid: </b>" +this.getBid() +"<b> , date: </b>" +this.getDate() +"</br>");
+		str= ("<b>Stock symbol: </b>" +this.getSymbol() +"<b>, ask: </b>" +this.getAsk() +"<b>, bid: </b>" +this.getBid() +"<b> , date: </b>" +this.getDate()  +"<b> , quantity: </b>" +this.getStockQuantity() +"</br>");
 		return str;
 		
 	
